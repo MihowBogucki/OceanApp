@@ -8,15 +8,18 @@ import { FirebaseProvider } from "../../providers/firebase/firebase";
   templateUrl: 'home.html'
 })
 export class HomePage {
+  babyItems: FirebaseListObservable<any[]>;
   shoppingItems: FirebaseListObservable<any[]>;
   newItem = '';
 
   constructor(public navCtrl: NavController, public firebaseProvider: FirebaseProvider) {
     this.shoppingItems = this.firebaseProvider.getShoppingItems();
+    this.babyItems = this.firebaseProvider.getBabies();
   }
 
   addItem() {
     this.firebaseProvider.addItem(this.newItem);
+    this.newItem = '';
   }
 
   removeItem(id) {
