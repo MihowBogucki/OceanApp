@@ -11,7 +11,7 @@
     <ion-row>
         <ion-col col-9>
             <ion-item>
-                <ion-input type="text" [(ngModel)]="newItem" placeholder="New Shopping item"></ion-input>
+                <ion-input type="text" [(ngModel)]="newItem" placeholder="New activity item"></ion-input>
             </ion-item>
         </ion-col>
         <ion-col>
@@ -21,26 +21,31 @@
 
     <ion-list>
         <ion-item-sliding *ngFor="let item of shoppingItems | async">
-            <ion-item>
+            <!--<ion-item>
                 {{ item.$value }}
             </ion-item>
             <ion-item-options side="right">
                 <button ion-button color="danger" icon-only (click)="removeItem(item.$key)"><ion-icon name="trash"></ion-icon></button>
+            </ion-item-options>-->
+
+
+            <ion-item>
+                <ion-avatar item-start>
+                    <img src="http://www.iconsfind.com/wp-content/uploads/2016/10/20161014_58006bf4b65af.png">
+                </ion-avatar>
+                <h2>{{item.$value}}</h2>
+                <p>Today I did...</p>
+            </ion-item>
+            <ion-item-options side="right">
+                <button ion-button color="danger" icon-only (click)="removeItem(item.$key)"><ion-icon name="trash"></ion-icon></button>
             </ion-item-options>
+
+
+
+
+
         </ion-item-sliding>
     </ion-list>
-    <ion-list>
-        <ion-item>
-            <ion-avatar item-left>
-                <img src="../assets/img/pidgey.png">
-            </ion-avatar>
-            <h2>Finn</h2>
-            <h3>Don't Know What To Do!</h3>
-            <p>I've had a pretty messed up day. If we just...</p>
-        </ion-item>
-    </ion-list>
-
-
 
 
 
@@ -53,10 +58,10 @@
             <ion-item-sliding>
                 <ion-item>
                     <ion-avatar item-start>
-                        <img src="../assets/img/pidgey.png">
+                        <img src="http://www.iconsfind.com/wp-content/uploads/2016/10/20161014_58006bf4b65af.png">
                     </ion-avatar>
                     <h2>Venkman</h2>
-                    <p>Back off man, I'm a scientist.</p>
+                    <p>I love apples.</p>
                 </ion-item>
                 <ion-item-options>
                     <button ion-button color="light" icon-left>
@@ -78,10 +83,10 @@
             <ion-item-sliding>
                 <ion-item>
                     <ion-avatar item-start>
-                        <img src="../assets/img/pidgey.png">
+                        <img src="http://www.iconsfind.com/wp-content/uploads/2016/10/20161014_58006bf27a2d0.png">
                     </ion-avatar>
                     <h2>Egon</h2>
-                    <p>We're gonna go full stream.</p>
+                    <p>I love cricket</p>
                 </ion-item>
                 <ion-item-options>
                     <button ion-button color="light" icon-left>
@@ -102,34 +107,10 @@
             <ion-item-sliding>
                 <ion-item>
                     <ion-avatar item-start>
-                        <img src="../assets/img/pidgey.png">
-                    </ion-avatar>
-                    <h2>Ray</h2>
-                    <p>Ugly little spud, isn't he?</p>
-                </ion-item>
-                <ion-item-options>
-                    <button ion-button color="light" icon-left>
-          <ion-icon name="ios-more"></ion-icon>
-          More
-        </button>
-                    <button ion-button color="primary" icon-left>
-          <ion-icon name="text"></ion-icon>
-          Text
-        </button>
-                    <button ion-button color="secondary" icon-left>
-          <ion-icon name="call"></ion-icon>
-          Call
-        </button>
-                </ion-item-options>
-            </ion-item-sliding>
-
-            <ion-item-sliding>
-                <ion-item>
-                    <ion-avatar item-start>
-                        <img src="../assets/img/pidgey.png">
+                        <img src="https://freeiconshop.com/wp-content/uploads/edd/person-flat.png">
                     </ion-avatar>
                     <h2>Winston</h2>
-                    <p>That's a big Twinkie.</p>
+                    <p>I play guitar</p>
                 </ion-item>
                 <ion-item-options>
                     <button ion-button color="light" icon-left>
@@ -150,10 +131,10 @@
             <ion-item-sliding>
                 <ion-item>
                     <ion-avatar item-start>
-                        <img src="../assets/img/pidgey.png">
+                        <img src="http://www.iconsfind.com/wp-content/uploads/2016/10/20161014_58006be6a9722.png">
                     </ion-avatar>
                     <h2>Tully</h2>
-                    <p>Okay, who brought the dog?</p>
+                    <p>Swimming</p>
                 </ion-item>
                 <ion-item-options>
                     <button ion-button color="light" icon-left>
@@ -171,29 +152,7 @@
                 </ion-item-options>
             </ion-item-sliding>
 
-            <ion-item-sliding>
-                <ion-item>
-                    <ion-avatar item-start>
-                        <img src="../assets/img/pidgey.png">
-                    </ion-avatar>
-                    <h2>Dana</h2>
-                    <p>I am The Gatekeeper!</p>
-                </ion-item>
-                <ion-item-options>
-                    <button ion-button color="light" icon-left>
-          <ion-icon name="ios-more"></ion-icon>
-          More
-        </button>
-                    <button ion-button color="primary" icon-left>
-          <ion-icon name="text"></ion-icon>
-          Text
-        </button>
-                    <button ion-button color="secondary" icon-left>
-          <ion-icon name="call"></ion-icon>
-          Call
-        </button>
-                </ion-item-options>
-            </ion-item-sliding>
+
 
         </ion-list>
 
@@ -205,10 +164,10 @@
             <ion-item-sliding>
                 <ion-item>
                     <ion-avatar item-start>
-                        <img src="../assets/img/pidgey.png">
+                        <img src="http://www.iconsfind.com/wp-content/uploads/2016/10/20161014_58006be216aa3.png">
                     </ion-avatar>
-                    <h2>Slimer</h2>
-                    <p>Boo!</p>
+                    <h2>Danny</h2>
+                    <p>Love eating fruit</p>
                 </ion-item>
                 <ion-item-options>
                     <button ion-button color="light" icon-left>
@@ -226,37 +185,14 @@
                 </ion-item-options>
             </ion-item-sliding>
 
-            <ion-item-sliding>
-                <ion-item>
-                    <ion-avatar item-start>
-                        <img src="../assets/img/pidgey.png">
-                    </ion-avatar>
-                    <h2>Stay Puft Marshmallow Man</h2>
-                    <p>Never cross the streams!</p>
-                </ion-item>
-                <ion-item-options>
-                    <button ion-button color="light" icon-left>
-          <ion-icon name="ios-more"></ion-icon>
-          More
-        </button>
-                    <button ion-button color="primary" icon-left>
-          <ion-icon name="text"></ion-icon>
-          Text
-        </button>
-                    <button ion-button color="secondary" icon-left>
-          <ion-icon name="call"></ion-icon>
-          Call
-        </button>
-                </ion-item-options>
-            </ion-item-sliding>
 
             <ion-item-sliding>
                 <ion-item>
                     <ion-avatar item-start>
-                        <img src="../assets/img/pidgey.png">
+                        <img src="http://www.noviasalcedo.es/wp-content/uploads/2016/05/person-girl-flat.png">
                     </ion-avatar>
-                    <h2>Gozer</h2>
-                    <p>Are you a God?</p>
+                    <h2>Ray</h2>
+                    <p>Sting Ray?</p>
                 </ion-item>
                 <ion-item-options>
                     <button ion-button color="light" icon-left>
@@ -283,4 +219,4 @@
             <ion-icon name="add" (click)="addItem()"></ion-icon>
       </button>
     </ion-fab>
-</ion-content> 
+</ion-content>
