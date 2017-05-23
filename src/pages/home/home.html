@@ -21,14 +21,6 @@
 
     <ion-list>
         <ion-item-sliding *ngFor="let item of shoppingItems | async">
-            <!--<ion-item>
-                {{ item.$value }}
-            </ion-item>
-            <ion-item-options side="right">
-                <button ion-button color="danger" icon-only (click)="removeItem(item.$key)"><ion-icon name="trash"></ion-icon></button>
-            </ion-item-options>-->
-
-
             <ion-item>
                 <ion-avatar item-start>
                     <img src="http://www.iconsfind.com/wp-content/uploads/2016/10/20161014_58006bf4b65af.png">
@@ -211,12 +203,17 @@
             </ion-item-sliding>
 
         </ion-list>
-
     </ion-content>
 
+
     <ion-fab right bottom>
-        <button ion-fab>
-            <ion-icon name="add" (click)="addItem()"></ion-icon>
-      </button>
+        <button ion-fab><ion-icon name="arrow-dropup"></ion-icon></button>
+        <ion-fab-list side="top">
+            <button ion-fab color="primary"><ion-icon name="logo-facebook"></ion-icon></button>
+            <button ion-fab color="secondary"><ion-icon name="logo-twitter"></ion-icon></button>
+            <button ion-fab color="dark"><ion-icon name="logo-vimeo"></ion-icon></button>
+            <button ion-fab color="secondary"><ion-icon name="logo-googleplus"></ion-icon></button>
+        </ion-fab-list>
     </ion-fab>
+
 </ion-content>
