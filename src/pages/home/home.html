@@ -1,219 +1,232 @@
 <ion-header>
-    <ion-navbar color="primary">
-        <ion-title>
-            People Task Activities 
-        </ion-title>
-    </ion-navbar>
+  <ion-navbar color="primary">
+    <ion-title>
+      People Task Activities
+    </ion-title>
+  </ion-navbar>
 </ion-header>
 
 <ion-content>
 
-    <ion-row>
-        <ion-col col-9>
-            <ion-item>
-                <ion-input type="text" [(ngModel)]="newItem" placeholder="New activity item"></ion-input>
-            </ion-item>
-        </ion-col>
-        <ion-col>
-            <button ion-button (click)="addItem()">Add!</button>
-        </ion-col>
-    </ion-row>
+  <ion-row>
+    <ion-col col-9>
+      <ion-item>
+        <ion-input type="text" [(ngModel)]="newItem" placeholder="New activity item"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <button ion-button (click)="addItem()">Add!</button>
+    </ion-col>
 
+  </ion-row>
+
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of shoppingItems | async">
+      <ion-item>
+        <h2>{{item.$value}}</h2>
+        <p>TEST</p>
+      </ion-item>
+
+      <ion-item-options side="right">
+        <button ion-button color="primary" icon-only (click)="updateItem(item)"><ion-icon name="trash"></ion-icon></button>
+        <button ion-button color="danger" icon-only (click)="removeItem(item.$key)"><ion-icon name="trash"></ion-icon></button>
+      </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let baby of babyItems | async">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src={{baby.img}}>
+        </ion-avatar>
+        <h2>{{baby.name}}</h2>
+        <p>{{baby.tagLine}}</p>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" icon-only (click)="removeItem(item.$key)"><ion-icon name="trash"></ion-icon></button>
+      </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
+
+
+
+  <ion-content class="outer-content">
     <ion-list>
-        <ion-item-sliding *ngFor="let baby of babyItems | async">
-            <ion-item>
-                <ion-avatar item-start>
-                    <img src={{baby.img}}>
-                </ion-avatar>
-                <h2>{{baby.name}}</h2>
-                <p>{{baby.tagLine}}</p>
-            </ion-item>
-            <ion-item-options side="right">
-                <button ion-button color="danger" icon-only (click)="removeItem(item.$key)"><ion-icon name="trash"></ion-icon></button>
-            </ion-item-options>
+      <ion-list-header>
+        23/05/2016
+      </ion-list-header>
+
+      <ion-item-sliding>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="http://www.iconsfind.com/wp-content/uploads/2016/10/20161014_58006bf4b65af.png">
+          </ion-avatar>
+          <h2>Venkman</h2>
+          <p>I love apples.</p>
+        </ion-item>
+        <ion-item-options>
+          <button ion-button color="light" icon-left>
+          <ion-icon name="ios-more"></ion-icon>
+          More
+        </button>
+          <button ion-button color="primary" icon-left>
+          <ion-icon name="text"></ion-icon>
+          Text
+        </button>
+          <button ion-button color="secondary" icon-left>
+          <ion-icon name="call"></ion-icon>
+          Call
+        </button>
+        </ion-item-options>
+      </ion-item-sliding>
+
+
+      <ion-item-sliding>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="http://www.iconsfind.com/wp-content/uploads/2016/10/20161014_58006bf27a2d0.png">
+          </ion-avatar>
+          <h2>Egon</h2>
+          <p>I love cricket</p>
+        </ion-item>
+        <ion-item-options>
+          <button ion-button color="light" icon-left>
+          <ion-icon name="ios-more"></ion-icon>
+          More
+        </button>
+          <button ion-button color="primary" icon-left>
+          <ion-icon name="text"></ion-icon>
+          Text
+        </button>
+          <button ion-button color="secondary" icon-left>
+          <ion-icon name="call"></ion-icon>
+          Call
+        </button>
+        </ion-item-options>
+      </ion-item-sliding>
+
+      <ion-item-sliding>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="http://www.iconsfind.com/wp-content/uploads/2016/10/20161014_58006be6a9722.png">
+          </ion-avatar>
+          <h2>Winston</h2>
+          <p>I play guitar</p>
+        </ion-item>
+        <ion-item-options>
+          <button ion-button color="light" icon-left>
+          <ion-icon name="ios-more"></ion-icon>
+          More
+        </button>
+          <button ion-button color="primary" icon-left>
+          <ion-icon name="text"></ion-icon>
+          Text
+        </button>
+          <button ion-button color="secondary" icon-left>
+          <ion-icon name="call"></ion-icon>
+          Call
+        </button>
+        </ion-item-options>
+      </ion-item-sliding>
+
+      <ion-item-sliding>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="https://freeiconshop.com/wp-content/uploads/edd/person-flat.png">
+          </ion-avatar>
+          <h2>Tully</h2>
+          <p>Swimming</p>
+        </ion-item>
+        <ion-item-options>
+          <button ion-button color="light" icon-left>
+          <ion-icon name="ios-more"></ion-icon>
+          More
+        </button>
+          <button ion-button color="primary" icon-left>
+          <ion-icon name="text"></ion-icon>
+          Text
+        </button>
+          <button ion-button color="secondary" icon-left>
+          <ion-icon name="call"></ion-icon>
+          Call
+        </button>
+        </ion-item-options>
+      </ion-item-sliding>
 
 
 
-
-
-        </ion-item-sliding>
     </ion-list>
 
+    <ion-list>
+      <ion-list-header>
+        22/05/2016
+      </ion-list-header>
 
-
-    <ion-content class="outer-content">
-        <ion-list>
-            <ion-list-header>
-                23/05/2016
-            </ion-list-header>
-
-            <ion-item-sliding>
-                <ion-item>
-                    <ion-avatar item-start>
-                        <img src="http://www.iconsfind.com/wp-content/uploads/2016/10/20161014_58006bf4b65af.png">
-                    </ion-avatar>
-                    <h2>Venkman</h2>
-                    <p>I love apples.</p>
-                </ion-item>
-                <ion-item-options>
-                    <button ion-button color="light" icon-left>
+      <ion-item-sliding>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="http://www.iconsfind.com/wp-content/uploads/2016/10/20161014_58006be216aa3.png">
+          </ion-avatar>
+          <h2>Danny</h2>
+          <p>Love eating fruit</p>
+        </ion-item>
+        <ion-item-options>
+          <button ion-button color="light" icon-left>
           <ion-icon name="ios-more"></ion-icon>
           More
         </button>
-                    <button ion-button color="primary" icon-left>
+          <button ion-button color="primary" icon-left>
           <ion-icon name="text"></ion-icon>
           Text
         </button>
-                    <button ion-button color="secondary" icon-left>
+          <button ion-button color="secondary" icon-left>
           <ion-icon name="call"></ion-icon>
           Call
         </button>
-                </ion-item-options>
-            </ion-item-sliding>
+        </ion-item-options>
+      </ion-item-sliding>
 
 
-            <ion-item-sliding>
-                <ion-item>
-                    <ion-avatar item-start>
-                        <img src="http://www.iconsfind.com/wp-content/uploads/2016/10/20161014_58006bf27a2d0.png">
-                    </ion-avatar>
-                    <h2>Egon</h2>
-                    <p>I love cricket</p>
-                </ion-item>
-                <ion-item-options>
-                    <button ion-button color="light" icon-left>
+      <ion-item-sliding>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="http://www.noviasalcedo.es/wp-content/uploads/2016/05/person-girl-flat.png">
+          </ion-avatar>
+          <h2>Ray</h2>
+          <p>Sting Ray?</p>
+        </ion-item>
+        <ion-item-options>
+          <button ion-button color="light" icon-left>
           <ion-icon name="ios-more"></ion-icon>
           More
         </button>
-                    <button ion-button color="primary" icon-left>
+          <button ion-button color="primary" icon-left>
           <ion-icon name="text"></ion-icon>
           Text
         </button>
-                    <button ion-button color="secondary" icon-left>
+          <button ion-button color="secondary" icon-left>
           <ion-icon name="call"></ion-icon>
           Call
         </button>
-                </ion-item-options>
-            </ion-item-sliding>
+        </ion-item-options>
+      </ion-item-sliding>
 
-            <ion-item-sliding>
-                <ion-item>
-                    <ion-avatar item-start>
-                        <img src="http://www.iconsfind.com/wp-content/uploads/2016/10/20161014_58006be6a9722.png">
-                    </ion-avatar>
-                    <h2>Winston</h2>
-                    <p>I play guitar</p>
-                </ion-item>
-                <ion-item-options>
-                    <button ion-button color="light" icon-left>
-          <ion-icon name="ios-more"></ion-icon>
-          More
-        </button>
-                    <button ion-button color="primary" icon-left>
-          <ion-icon name="text"></ion-icon>
-          Text
-        </button>
-                    <button ion-button color="secondary" icon-left>
-          <ion-icon name="call"></ion-icon>
-          Call
-        </button>
-                </ion-item-options>
-            </ion-item-sliding>
-
-            <ion-item-sliding>
-                <ion-item>
-                    <ion-avatar item-start>
-                        <img src="https://freeiconshop.com/wp-content/uploads/edd/person-flat.png">
-                    </ion-avatar>
-                    <h2>Tully</h2>
-                    <p>Swimming</p>
-                </ion-item>
-                <ion-item-options>
-                    <button ion-button color="light" icon-left>
-          <ion-icon name="ios-more"></ion-icon>
-          More
-        </button>
-                    <button ion-button color="primary" icon-left>
-          <ion-icon name="text"></ion-icon>
-          Text
-        </button>
-                    <button ion-button color="secondary" icon-left>
-          <ion-icon name="call"></ion-icon>
-          Call
-        </button>
-                </ion-item-options>
-            </ion-item-sliding>
+    </ion-list>
+  </ion-content>
 
 
-
-        </ion-list>
-
-        <ion-list>
-            <ion-list-header>
-                22/05/2016
-            </ion-list-header>
-
-            <ion-item-sliding>
-                <ion-item>
-                    <ion-avatar item-start>
-                        <img src="http://www.iconsfind.com/wp-content/uploads/2016/10/20161014_58006be216aa3.png">
-                    </ion-avatar>
-                    <h2>Danny</h2>
-                    <p>Love eating fruit</p>
-                </ion-item>
-                <ion-item-options>
-                    <button ion-button color="light" icon-left>
-          <ion-icon name="ios-more"></ion-icon>
-          More
-        </button>
-                    <button ion-button color="primary" icon-left>
-          <ion-icon name="text"></ion-icon>
-          Text
-        </button>
-                    <button ion-button color="secondary" icon-left>
-          <ion-icon name="call"></ion-icon>
-          Call
-        </button>
-                </ion-item-options>
-            </ion-item-sliding>
-
-
-            <ion-item-sliding>
-                <ion-item>
-                    <ion-avatar item-start>
-                        <img src="http://www.noviasalcedo.es/wp-content/uploads/2016/05/person-girl-flat.png">
-                    </ion-avatar>
-                    <h2>Ray</h2>
-                    <p>Sting Ray?</p>
-                </ion-item>
-                <ion-item-options>
-                    <button ion-button color="light" icon-left>
-          <ion-icon name="ios-more"></ion-icon>
-          More
-        </button>
-                    <button ion-button color="primary" icon-left>
-          <ion-icon name="text"></ion-icon>
-          Text
-        </button>
-                    <button ion-button color="secondary" icon-left>
-          <ion-icon name="call"></ion-icon>
-          Call
-        </button>
-                </ion-item-options>
-            </ion-item-sliding>
-
-        </ion-list>
-    </ion-content>
-
-
-    <ion-fab right bottom>
-        <button ion-fab><ion-icon name="arrow-dropup"></ion-icon></button>
-        <ion-fab-list side="top">
-            <button ion-fab color="secondary"><ion-icon name="logo-facebook"></ion-icon></button>
-            <button ion-fab color="primary"><ion-icon name="logo-twitter"></ion-icon></button>
-            <button ion-fab color="secondary"><ion-icon name="logo-vimeo"></ion-icon></button>
-            <button ion-fab color="primary"><ion-icon name="logo-googleplus"></ion-icon></button>
-        </ion-fab-list>
-    </ion-fab>
+  <ion-fab right bottom>
+    <button ion-fab><ion-icon name="arrow-dropup"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button ion-fab color="secondary"><ion-icon name="logo-facebook"></ion-icon></button>
+      <button ion-fab color="primary"><ion-icon name="logo-twitter"></ion-icon></button>
+      <button ion-fab color="secondary"><ion-icon name="logo-vimeo"></ion-icon></button>
+      <button ion-fab color="primary"><ion-icon name="logo-googleplus"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
 
 </ion-content>

@@ -27,6 +27,11 @@ export class FirebaseProvider {
     this.afd.list('/shoppingItems/').push(name);
   }
 
+  updateItem(key) {
+    this.afd.list('/shoppingItems/').update(key, "");
+  }
+
+
   removeItem(id) {
     this.afd.list('/shoppingItems/').remove(id);
   }

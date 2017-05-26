@@ -26,4 +26,9 @@ export class HomePage {
     this.firebaseProvider.removeItem(id);
   }
 
+
+  updateItem(item) {
+    this.firebaseProvider.updateItem(item.$key);
+  }
+
 }
